@@ -75,8 +75,6 @@ let g:WhichKeyDesc_action= "<leader>a Actions"
 let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu"
 let g:WhichKeyDesc_action_search = "<leader>as Open command modal"
 
-let g:WhichKeyDesc_file_quickLook = "<leader><leader> Recent files"
-
 let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
 let g:WhichKeyDesc_file_nav_goto_file = "<leader>ff Go to file"
 let g:WhichKeyDesc_file_nav_goto_content = "<leader>fc Search for file content"
@@ -110,6 +108,11 @@ let g:WhichKeyDesc_run_stop = "<leader>ss Stop"
 let g:WhichKeyDesc_search_replace = "<leader><leader>r Search & Replace"
 let g:WhichKeyDesc_refactor_save = "<leader>w Refactor & Save"
 
+let g:WhichKeyDesc_breakpoint = "<leader>b Breakpoints"
+let g:WhichKeyDesc_breakpoint_line = "<leader>bb Add line breakpoint"
+let g:WhichKeyDesc_breakpoint_method = "<leader>bm Add method breakpoint"
+let g:WhichKeyDesc_breakpoint_enable = "<leader>be Toggle breakpoint enabled"
+
 let g:WhichKeyDesc_hide_all = "<leader>h Hide all windows"
 
 "" Key mappings
@@ -131,7 +134,6 @@ nnoremap <A-j> <C-w>j
 " Jump between methods
 nnoremap [[ :action MethodUp <CR>
 nnoremap ]] :action MethodDown <CR>
-
 
 " Easy visual indentation
 vnoremap < <gv
@@ -219,3 +221,8 @@ xnoremap <leader><leader>r :s//g<Left><Left>
 
 " Hide all
 nmap <leader>h <Action>(HideAllWindows)
+
+" Breakpoints
+nmap <leader>bb <Action>(ToggleLineBreakpoint)
+nmap <leader>be <Action>(ToggleBreakpointEnabled)
+nmap <leader>bm <Action>(ToggleMethodBreakpoint)
