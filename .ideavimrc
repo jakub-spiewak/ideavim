@@ -222,6 +222,9 @@ xnoremap <leader><leader>r :s//g<Left><Left>
 " Hide all
 nmap <leader>h <Action>(HideAllWindows)
 
+" Clear the search buffer when hitting return
+nnoremap <Leader>/ :nohlsearch<cr>
+
 " Breakpoints
 nmap <leader>bb <Action>(ToggleLineBreakpoint)
 nmap <leader>be <Action>(ToggleBreakpointEnabled)
